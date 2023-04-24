@@ -15,6 +15,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PricesDTO {
+
     private Long id;
 
     private ProductCategory productCategory;

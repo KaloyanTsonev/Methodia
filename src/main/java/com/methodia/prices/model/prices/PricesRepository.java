@@ -9,8 +9,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PricesRepository extends JpaRepository<Prices, Long> {
-    @Query("select p from Prices p where product.id = :productId and p.startDate <= :today AND p.endDate >= :today")
-    Prices findCurrentProductPriceByProductId(long productId, LocalDate today);
 
-    List<Prices> findAllByProductId(long productId);
+    @Query("select p from Prices p where product.id = :productId and p.startDate <= :today AND p.endDate >= :today")
+    Prices findCurrentProductPriceByProductId(Long productId, LocalDate today);
+
+    List<Prices> findAllByProductId(Long productId);
 }

@@ -22,6 +22,7 @@ import lombok.ToString;
 @ToString
 @Entity
 public class Product {
+
     @Id
     @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

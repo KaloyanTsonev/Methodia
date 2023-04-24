@@ -7,8 +7,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-     @Query("select p.id from Product p where p.category = :productCategory")
-     long findProductIdByCategory(@Param("productCategory") ProductCategory productCategory);
+
+    @Query("select p.id from Product p where p.category = :productCategory")
+    Long findProductIdByCategory(@Param("productCategory") ProductCategory productCategory);
 
 
 }

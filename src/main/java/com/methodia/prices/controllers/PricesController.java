@@ -33,14 +33,14 @@ public class PricesController {
     @GetMapping("/currentPrice/{productCategory}")
     public ResponseEntity<PricesDTO> getCurrentProductPrice(@PathVariable("productCategory") String productCategory) {
 
-        long productId = productService.findProductIdByCategory(productCategory);
+        Long productId = productService.findProductIdByCategory(productCategory);
         return new ResponseEntity<>(pricesService.getCurrentProductPrice(productId), HttpStatus.OK);
     }
 
     @GetMapping("/{productCategory}")
     public ResponseEntity<List<PricesDTO>> getProductPrices(@PathVariable("productCategory") String productCategory) {
 
-        long productId = productService.findProductIdByCategory(productCategory);
+        Long productId = productService.findProductIdByCategory(productCategory);
         return new ResponseEntity<>(pricesService.getProductPrices(productId), HttpStatus.OK);
     }
 
